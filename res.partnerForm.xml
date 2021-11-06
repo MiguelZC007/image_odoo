@@ -43,8 +43,8 @@
                     <field name="street" placeholder="Street..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
                     <field name="x_zone" placeholder="Zona" />
                     <field invisible="1" name="street2" placeholder="Street 2..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
-                    <field name="city" placeholder="City" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
-                    <field name="state_id" placeholder="State" options="{'no_open': True, 'no_quick_create': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}" />
+                    <field name="city" placeholder="Provincia" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
+                    <field name="state_id" placeholder="Ciudad" options="{'no_open': True, 'no_quick_create': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}" />
                     <field invisible="1" name="zip" placeholder="ZIP" class="o_address_zip" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
                     <field name="country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
                 </div>
@@ -57,9 +57,15 @@
                 <field invisible="1" name="vat" placeholder="e.g. BE0477472701" attrs="{'readonly': [('parent_id','!=',False)]}" />
             </group>
             <group>
+                <field name="x_blood_type" placeholder="Tipo de sangre" />
+                <field name="x_underlying_disease" placeholder="Enfermedad de base" />
+                <field name="x_gender" placeholder="Genero" />
+                <field name="x_ci" placeholder="carnet de identidad" />
+                <field name="date" placeholder="Fecha de Nacimiento" />
+                <field name="x_age" placeholder="Edad" />
                 <field invisible="1" name="function" placeholder="e.g. Sales Director" attrs="{'invisible': [('is_company','=', True)]}" />
-                <field name="phone" widget="phone" />
-                <field invisible="1" name="mobile" widget="phone" />
+
+                <field name="mobile" widget="phone" placeholder="Nro de celular" />
                 <field name="user_ids" invisible="1" />
                 <field name="email" widget="email" context="{'gravatar_image': True}" attrs="{'required': [('user_ids','!=', [])]}" />
                 <field invisible="1" name="website" widget="url" placeholder="e.g. https://www.odoo.com" />
@@ -71,7 +77,10 @@
                     <button type="action" name="53" class="btn-sm btn-link mb4 fa fa-globe" aria-label="More languages" groups="base.group_system" title="More languages" />
                 </div>
                 <field invisible="1" name="category_id" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags..." />
+
             </group>
+            <field name="x_about_us" placeholder="Como se Entero de Nosostros?" />
+            <field name="x_observation" placeholder="Observaciones" />
         </group>
 
         <notebook colspan="4">
