@@ -6,14 +6,6 @@ services:
             - db
         ports:
             - '8069:8069'
-        volumes:
-            - ./app/web:/var/lib/odoo
-            - ./app/config:/etc/odoo
-            - ./app/addons:/mnt/extra-addons
-        environment:
-            - PASSWORD_FILE=/run/secrets/postgresql_password
-        secrets:
-            - postgresql_password
     db:
         image: postgres:13
         environment:
